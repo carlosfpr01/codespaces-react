@@ -2,30 +2,74 @@ import './Formulario.css'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import Botao from '../Botao'
+import { useState } from 'react'
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const patrulhas=[
-        'Poti',
-        'Mayo',
-        'Aguia',
-        'Gorila',
-        'Leopardo',
-        'Escorpião',
-        'matilha-3',
-        'matilha-2',
-        'matilha-1'
+        'Potiguara',
+        'Mayoruna',
+        'Yanomami',
+        'Chefia',
     ]
+
+    const cargos=[
+        'Chefe de seção',
+        'Chefe auxiliar',
+        'Monitor',
+        'Sub-monitor',
+        'Elemento',
+    ]
+
+    const [nome, setNome] = useState('')
+    const [cargo, setCargo] = useState('')
+    const [imagem, setImagem] = useState('')
+    const [patrulha, setPatrulha] = useState('')
+
+    const AoSalvar = (evento) => {
+        evento.preventDefault()
+        props.elementoAdd({
+            nome,
+            cargo,
+            imagem,
+            patrulha
+        });
+    }
 
     return (
         <section className='formulario'>
-            <form>
+            <form onSubmit={AoSalvar}>
                 <h2>Preencha os dados requisitados para concluir a criação do perfil</h2>
-                <CampoTexto label="Nome" placeholder="Digite o seu nome..."/>
-                <CampoTexto label="Cargo" placeholder="Digite o seu idade..."/>
-                <CampoTexto label="Imagem" placeholder="Digite o sua imagem..."/>
-                <ListaSuspensa label="Patrulhas" itens={patrulhas}/>
-                <Botao text="Criar Card"/>
+                <CampoTexto 
+                    obrigatorio={true} 
+                    label="Nome" 
+                    placeholder="Digite o seu nome..."
+                    valor={nome}
+                    aoAlterado={setNome}
+                />
+                <ListaSuspensa
+                    obrigatorio={true}
+                    label="Cargo"
+                    itens={cargos}
+                    valor={cargo}
+                    aoAlterado={setCargo}
+                />
+                <CampoTexto
+                    label="Imagem"
+                    placeholder=""
+                    valor={imagem}
+                    aoAlterado={setImagem}
+                />
+                <ListaSuspensa 
+                    obrigatorio={true} 
+                    label="Patrulhas" 
+                    itens={patrulhas}
+                    valor={patrulha}
+                    aoAlterado={setPatrulha}
+                />
+                <Botao
+                    text="Criar Card"
+                />
             </form>
         </section>
 
