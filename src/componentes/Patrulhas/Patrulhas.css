@@ -1,0 +1,14 @@
+.patrulha{
+    text-align: center;
+    padding: 32px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+}
+
+.patrulha h3{
+    font-size: 32px;
+    color: rgb(48, 48, 48);
+    border-bottom: 4px solid ;
+    display: inline-block;
+    padding-bottom: 8px;
+    font-family: 'sentury Ghotic' sans-serif;
+}
