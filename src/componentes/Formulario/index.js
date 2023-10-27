@@ -6,16 +6,9 @@ import { useState } from 'react'
 
 const Formulario = (props) => {
 
-    const patrulhas=[
-        'Potiguara',
-        'Mayoruna',
-        'Yanomami',
-        'Chefia',
-    ]
-
     const cargos=[
         'Chefe de seção',
-        'Chefe auxiliar',
+        'Chefe assistente',
         'Monitor',
         'Sub-monitor',
         'Elemento',
@@ -63,7 +56,7 @@ const Formulario = (props) => {
                 <ListaSuspensa 
                     obrigatorio={true} 
                     label="Patrulhas" 
-                    itens={patrulhas}
+                    itens={props.patrulhas}
                     valor={patrulha}
                     aoAlterado={setPatrulha}
                 />

@@ -28,23 +28,28 @@ function App() {
     }
   ]
 
+  
   const [elementos, setElementos] = useState([])
 
   const elementoAdd = (elemento) => {
     console.log(elemento)
+    setElementos([...elementos, elemento])
   }
   
   return (
     <div className="App">
       <Banner/>
       <Formulario
-        elementoAdd={elemento => elementoAdd(elemento)}
+        patrulhas ={patrulhas.map(patrulha => patrulha.nome)}
+        elementoAdd={ elemento => elementoAdd(elemento)}
       />
-      {patrulhas.map(patrulha => <Patrulha 
+      {patrulhas.map(
+        patrulha => <Patrulha 
           key={patrulha.nome} 
           nome={patrulha.nome} 
           corPrimaria={patrulha.corPrimaria}
           corSecundaria={patrulha.corSecundaria}
+          elementos = {elementos}
         />
         )
       }
