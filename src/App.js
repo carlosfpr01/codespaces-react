@@ -46,10 +46,11 @@ function App() {
       {patrulhas.map(
         patrulha => <Patrulha 
           key={patrulha.nome} 
-          nome={patrulha.nome} 
+          nome={patrulha.nome}
+          cargo={patrulha.cargo} 
           corPrimaria={patrulha.corPrimaria}
           corSecundaria={patrulha.corSecundaria}
-          elementos = {elementos}
+          elementos = {elementos.filter(elementos => elementos.patrulha === patrulha.nome)}
         />
         )
       }

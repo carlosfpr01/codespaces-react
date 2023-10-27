@@ -12,3 +12,9 @@
     padding-bottom: 8px;
     font-family: 'sentury Ghotic' sans-serif;
 }
+.patrulha .elementos{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}

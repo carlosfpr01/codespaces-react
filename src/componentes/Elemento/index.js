@@ -1,14 +1,14 @@
 import './Elemento.css'
 
-const Elemento = (props) => {
+const Elemento = ({nome, imagem, cargo}) => {
     return (
         <div className='elemento'>
             <div className='cabecalho'>
-                <img src={props.foto} alt="Foto de perfil de"/>
+                <img src={imagem} alt={nome}/>
             </div>
             <div className='rodape'>
-                <h4>{props.nome}</h4>
-                <h5>{props.cargo}</h5>
+                <h4>{nome}</h4>
+                <h5>{cargo}</h5>
             </div>
         </div>
     )
