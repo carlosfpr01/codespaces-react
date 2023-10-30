@@ -27,6 +27,10 @@ const Formulario = (props) => {
             imagem,
             patrulha
         });
+        setCargo('')
+        setNome('')
+        setImagem('')
+        setPatrulha('')
     }
 
     return (
@@ -38,31 +42,32 @@ const Formulario = (props) => {
                     label="Nome" 
                     placeholder="Digite o seu nome..."
                     valor={nome}
-                    aoAlterado={setNome}
+                    aoAlterado={valor => setNome(valor)}
                 />
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Cargo"
                     itens={cargos}
                     valor={cargo}
-                    aoAlterado={setCargo}
+                    aoAlterado={valor => setCargo(valor)}
                 />
                 <CampoTexto
                     label="Imagem"
                     placeholder=""
                     valor={imagem}
-                    aoAlterado={setImagem}
+                    aoAlterado={valor => setImagem(valor)}
                 />
                 <ListaSuspensa 
                     obrigatorio={true} 
-                    label="Patrulhas" 
+                    label="Patrulha" 
                     itens={props.patrulhas}
                     valor={patrulha}
-                    aoAlterado={setPatrulha}
+                    aoAlterado={valor => setPatrulha(valor)}
                 />
                 <Botao
                     text="Criar Card"
                 />
+              
             </form>
         </section>
 

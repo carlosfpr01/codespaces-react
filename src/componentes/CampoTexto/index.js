@@ -3,10 +3,6 @@ import'./CampoTexto.css'
 
 const CampoTexto = (props) => {
 
-    const placeholderModificada = `${props.placeholder}...` 
-
-    let valor = 'articulo'
-
     const aoDigitado = (evento) => {
         props.aoAlterado(evento.target.value)
     }
